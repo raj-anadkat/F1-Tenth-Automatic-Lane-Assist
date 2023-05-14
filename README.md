@@ -90,12 +90,10 @@ The Birds Eye View image can be Re-Projected Back to the camera frame and other 
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/43d557c9-c99e-4082-9d6e-00120bc4cef8" alt="half_lane" width="300"/>
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/1ed5d994-4005-410e-a094-da673d19121b" alt="half_lane" width="300"/>
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/0d1c79c3-08ed-44a5-a723-407ee14b5b6f" alt="half_lane" width="300"/>
-
 </p>
+## Videos
 </p>
 https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/05299137-f89c-4d51-a73d-8546f7eca817
-</p>
-</p>
 https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/9dcbd728-9961-43f4-b9d2-f902b14ae38a
 </p>
 
