@@ -9,6 +9,9 @@ The objective is to accurately identify the left and right lanes through classic
 ## Step 1
 The image is first captured in a resolution of (480,270), the trapezoidal region of interests are marked as shown in the figure below, using Perspective Transformation, we can find the Birds eye view of the frame as shown in the figure below.
 
-<img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/3db8bc1b-a69d-4768-9f5d-61feb4f9aabd" alt="ROI" width="300"/>
-<img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/dcbfbacd-f5ce-4cf6-be1e-27543ab1d041" alt="BEV" width="300"/>
+<p float="left">
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/3db8bc1b-a69d-4768-9f5d-61feb4f9aabd" alt="ROI" width="400"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/dcbfbacd-f5ce-4cf6-be1e-27543ab1d041" alt="BEV" width="400" style="margin-left:50px;"/>
+</p>
+
 
