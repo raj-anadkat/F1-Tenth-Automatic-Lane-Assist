@@ -25,8 +25,8 @@ The masked image still contains noise despite prior image processing steps. This
 
 One approach to accomplishing this task is to split the image vertically into two halves and examine the histogram of each half in horizontal slices of 10-20 pixels. This allows us to detect areas of high pixel concentration for the left and right lanes. The pixel indices corresponding to these regions of interest can then be extracted and used as inputs for polynomial curve fitting algorithms. By estimating the curvature of the lanes using polynomial curves, we can obtain a more accurate representation of the lane boundaries and navigate the racetrack more effectively.
 <p float="left">
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/3832f321-702f-4a69-be6a-9a3cbaba6b09" alt="mask" width="400"/>
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/0e746d71-2ed4-4bfa-8fac-83d5182bccc2" alt="dilation" width="400" style="margin-left:50px;"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/4e3f2b4b-914d-4f00-927e-249174e0cc3f" alt="mask" width="400"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/98bb80ef-c705-404e-8e0f-0250b96c65e1" alt="dilation" width="400" style="margin-left:50px;"/>
 </p>
 
 
