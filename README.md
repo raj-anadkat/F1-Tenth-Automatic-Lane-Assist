@@ -1,4 +1,4 @@
-# F1_Tenth_Lane_Detection
+# F1 Tenth Automatic Lane Assist
 
 ## I. Goals
 - Develop an autonomous driving system that uses classical computer vision techniques to detect and follow lanes
