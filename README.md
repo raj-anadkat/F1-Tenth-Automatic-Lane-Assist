@@ -41,7 +41,7 @@ To extract the lane lines from the bird's-eye view image, the indices of the whi
 The Camera Image and the overlayed BEV curves can be observed in the images below, which illustrate the effectiveness of the curve fitting and outlier rejection process.
 <p float="left">
   <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/9f91ea52-3c4e-4ca1-b646-846c6c05317d" alt="img" width="200"/>
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/53427130-6143-4caa-a8e3-db6e31b8ad61"alt="img" height="110"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/53427130-6143-4caa-a8e3-db6e31b8ad61"alt="img" height="115"/>
   <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/cd133adc-e10f-4c8a-aef1-9d77008c8520" alt="curve" width="200"/>
   <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/dcca7e08-674f-4bd0-857a-35e419968644" alt="curve" width="200"/> 
 </p>
@@ -59,7 +59,7 @@ If the number of peaks in the left lane is below a certain threshold, this indic
 Once the Centre Line has been estimated, the next step is to calculate the error between the car's heading and the estimated Centre Line. This can be achieved by selecting a reference point in the image that corresponds to the Centre of the track and calculating its deviation from the estimated Centre Line. Using the Birds eye view is here an advantage as you can easily set the reference point. The reference point can be selected by considering the dimensions of the car and the desired trajectory.
 
 The error is then calculated as the distance between the reference point and the estimated Centre Line. 
-$$error = x_{e} - x_{i}$$, where $$ x_{e} $$ is the x-coordinate of the estimated centerline at a lookahead distance, and $$x_{i} $$ is the x-coordinate of the image center, which is typically half of the image width (e.g., 240 pixels in a 480-pixel wide image).
+$$error = x_{e} - x_{i}$$, where $x_{e}$ is the x-coordinate of the estimated centerline at a lookahead distance, and $x_{i}$ is the x-coordinate of the image center, which is typically half of the image width (e.g., 240 pixels in a 480-pixel wide image).
 
 The direction of the error (left or right) indicates the direction in which the car should steer to stay on track. Once the error has been calculated, it can be used to determine the Steering Angle of the car.
  </p>
