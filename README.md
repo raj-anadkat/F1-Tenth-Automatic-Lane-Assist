@@ -1,7 +1,10 @@
 # F1_Tenth_Lane_Detection
 
 ## I. Goals
-- Driving the car autonomously via Lane Detection and Following using Classical Computer Vision Technqiues
+- Develop an autonomous driving system that uses classical computer vision techniques to detect and follow lanes
+- Taking into account camera mounting height and wide lane constraints with limmited Field of view (55 degrees)
+- Ensure the system is robust to detect curves and can operate in different lighting conditions
+- Ensure real-time operation of the system.
 
 ## II. Detecting the Lanes
 The objective is to accurately identify the left and right lanes through classical computer vision techniques. While methods like Hough Transforms are effective in detecting straight lanes, they may not suffice for the F1 tenth scenario that involves wider lanes with sharp curves and mounting height limitations. Hence, exploring alternative techniques such as Bird's Eye View (BEV) becomes imperative. BEV involves transforming the input image into a top-down view, offering a better perspective of the lane markings, road curvature and lookahead distance, and can be used for lane detection and centreline estimation
