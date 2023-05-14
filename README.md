@@ -38,9 +38,9 @@ To extract the lane lines from the bird's-eye view image, the indices of the whi
 
 The Camera Image and the overlayed BEV curves can be observed in the images below, which illustrate the effectiveness of the curve fitting and outlier rejection process.
 <p float="left">
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/9f91ea52-3c4e-4ca1-b646-846c6c05317d" alt="img" width="300"/>
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/cd133adc-e10f-4c8a-aef1-9d77008c8520" alt="curve" width="300"/>
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/dcca7e08-674f-4bd0-857a-35e419968644" alt="curve" width="300"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/9f91ea52-3c4e-4ca1-b646-846c6c05317d" alt="img" width="200"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/cd133adc-e10f-4c8a-aef1-9d77008c8520" alt="curve" width="200"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/dcca7e08-674f-4bd0-857a-35e419968644" alt="curve" width="200"/>
   
 </p>
 
@@ -66,5 +66,12 @@ The error term in the lane centering algorithm is a measure of the deviation of 
 
 Once the normalized error value is obtained, it is used to calculate the proportional, integral, and derivative terms of the PID controller. The proportional term represents the immediate response of the system to the error and is proportional to the magnitude of the error. The integral term represents the cumulative effect of the error over time and helps to eliminate steady-state errors. The derivative term represents the rate of change of the error and helps to dampen oscillations.
 
-Finally, the output of the PID controller is the steering angle that will be used to adjust the direction of the vehicle. However, this output is limited to the range of [-0.35, 0.35] to ensure that the vehicle does not overcompensate and turn too sharply.
+$$ u(t)=K_{p}e(t)+K_{i}\int_{0}^{t}e(t^{\prime})dt^{\prime}+K_{d}\frac{d}{dt}(e(t)) $$
+
+Here, $K_p$, $K_i$, and $K_d$ are constants that determine how much weight each of the three components (proportional, integral, derivative) contribute to the control output $u(t)$. $u(t)$ in our case is the steering angle we want the car to drive at. The error term $e(t)$ is the difference between the set point and the parameter we want to maintain around that set point.
+
+Finally, the output of the PID controller is the steering angle that will be used to adjust the direction of the vehicle. constrained to a range of [-0.35, 0.35] which are the minimum and maximum steering angles.
+
+Depending on the steering angles, velocities are assigned to ensure lower speeds during curves and higher speeds on the straights.
+
 
