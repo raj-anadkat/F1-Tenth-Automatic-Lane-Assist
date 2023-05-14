@@ -8,20 +8,20 @@ The objective is to accurately identify the left and right lanes through classic
 
 ## Step 1 : Birds Eye View
 <div align="center">
-<img src= "https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/228b8736-ab66-4467-9386-7f805edc6a18"alt="ROI" width="600"/>
+<img src= "https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/228b8736-ab66-4467-9386-7f805edc6a18"alt="ROI" width="400"/>
  <div>
  
 The captured image has a resolution of (480,270). To identify the region of interest (ROI) in the image, we mark a trapezoidal shape. Using perspective transformation, we can obtain a bird's-eye view of the frame. The figure below illustrates the ROI and the bird's-eye view. The code for adjusting the ROI points can be found in a function named "find_ROI".
 <p float="left">
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/3db8bc1b-a69d-4768-9f5d-61feb4f9aabd" alt="ROI" width="400"/>
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/dcbfbacd-f5ce-4cf6-be1e-27543ab1d041" alt="BEV" width="400" style="margin-left:50px;"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/3db8bc1b-a69d-4768-9f5d-61feb4f9aabd" alt="ROI" width="300"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/dcbfbacd-f5ce-4cf6-be1e-27543ab1d041" alt="BEV" width="300" style="margin-left:50px;"/>
 </p>
 
 ## Step 2: Detecting and Processing the Yellow Lanes using HSV and Masking
 After obtaining the bird's-eye view (BEV), we need to detect the yellow lanes. To achieve this, we utilize OpenCV's HSV color space. We first isolate the regions with yellow color in the HSV range. These regions are then masked to white regions with 255 pixel intensity, while the remaining regions are marked as black with 0 pixel intensity, using binary thresholding. However, noise present in the image can cause gaps and inconsistencies in the binary thresholding. To address this, morpholocial operations such as dilation, erosion etc are applied to fill out the gaps. However, life is tough and there may still be some noise, this can be looked after later.
 <p float="left">
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/d0ee5e9e-4885-43a3-9ff8-8c567b359003" alt="mask" width="400"/>
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/98e0ca6e-0d7a-4bd0-90ae-6fde26ce22a0" alt="dilation" width="400" style="margin-left:50px;"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/d0ee5e9e-4885-43a3-9ff8-8c567b359003" alt="mask" width="300"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/98e0ca6e-0d7a-4bd0-90ae-6fde26ce22a0" alt="dilation" width="300" style="margin-left:50px;"/>
 </p>
 
 ## Step 3: Detecting Points for Lines and Curves using Histograms
@@ -49,17 +49,17 @@ Detecting only one side of a lane or none at all can be a challenging task, espe
 
 If the number of peaks in the left lane is below a certain threshold, this indicates that the left lane is not detected, and the system may have to rely on the right lane and estimate the center line. To accomplish this, the average width of the track can be estimated and half of this value can be added to the right lane position. This approach can increase the robustness of the system and enable it to handle scenarios where one lane or no lanes are detected.
 <p float="left">
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/16ea79b6-8fab-4349-8356-427ff8c60bef" alt="half_lane" width="400"/>
-  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/4786a55d-ce33-4fd7-a5c3-cf385070f25c" alt="approx" width="400" style="margin-left:50px;"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/16ea79b6-8fab-4349-8356-427ff8c60bef" alt="half_lane" width="300"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/4786a55d-ce33-4fd7-a5c3-cf385070f25c" alt="approx" width="300" style="margin-left:50px;"/>
 </p>
 
 ## III. Calculating Error in the Trajectory
 Once the Centre Line has been estimated, the next step is to calculate the error between the car's heading and the estimated Centre Line. This can be achieved by selecting a reference point in the image that corresponds to the Centre of the track and calculating its deviation from the estimated Centre Line. Using the Birds eye view is here an advantage as you can easily set the reference point. The reference point can be selected by considering the dimensions of the car and the desired trajectory.
 
 The error is then calculated as the distance between the reference point and the estimated Centre Line. The direction of the error (left or right) indicates the direction in which the car should steer to stay on track. Once the error has been calculated, it can be used to determine the Steering Angle of the car.
-<p float="centre">
+<div align="center">
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/985d3a00-670d-4d02-8c44-c8391123e5edalt" alt="half_lane" width="400"/>
-</p>
+<div>
 
 ## IV. Calculating Steering Angle and Velocities
 The error term in the lane centering algorithm is a measure of the deviation of the estimated lane centerline from the actual center of the track in the image. The magnitude of the deviation can be quite large, ranging from -150 to 150 pixels, depending on the width of the track. In order to ensure that the error term is scaled to a range appropriate for the steering angle range of [-0.35, 0.35], the error is first normalized by dividing it by a scaling factor.
