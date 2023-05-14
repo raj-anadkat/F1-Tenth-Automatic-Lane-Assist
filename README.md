@@ -39,6 +39,17 @@ The Camera Image and the overlayed BEV curves can be observed in the images belo
   <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/dcca7e08-674f-4bd0-857a-35e419968644" alt="curve" width="300"/>
   
 </p>
+
+## Step 5: Edge Case Detection - When only One lane is Detected/ No Lanes Detected
+Detecting only one side of a lane or none at all can be a challenging task, especially in the case of F1 tracks with aggressive curves and lanes that are two car lengths wide. In order to overcome this issue, it is possible to count the number of histogram peaks detected in the left and right sides of the image.
+
+If the number of peaks in the left lane is below a certain threshold, this indicates that the left lane is not detected, and the system may have to rely on the right lane and estimate the center line. To accomplish this, the average width of the track can be estimated and half of this value can be added to the right lane position. This approach can increase the robustness of the system and enable it to handle scenarios where one lane or no lanes are detected.
+<p float="left">
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/16ea79b6-8fab-4349-8356-427ff8c60bef" alt="half_lane" width="400"/>
+  <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/4786a55d-ce33-4fd7-a5c3-cf385070f25c" alt="approx" width="400" style="margin-left:50px;"/>
+</p>
+
+## Step 6: Calculating Error in the Trajectory
  
 
 
