@@ -60,7 +60,7 @@ Once the Centre Line has been estimated, the next step is to calculate the error
 
 The error is then calculated as the distance between the reference point and the estimated Centre Line. The direction of the error (left or right) indicates the direction in which the car should steer to stay on track. Once the error has been calculated, it can be used to determine the Steering Angle of the car.
  </p>
-<img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/985d3a00-670d-4d02-8c44-c8391123e5edalt" alt="half_lane" width="400"/>
+<img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/4ab3c2f4-1074-43e0-9033-6c46db1fa83a" alt="half_lane" width="400"/>
  </p>
 
 ## IV. Calculating Steering Angle and Velocities
@@ -77,8 +77,6 @@ Finally, the output of the PID controller is the steering angle that will be use
 Depending on the steering angles, velocities are assigned to ensure lower speeds during curves and higher speeds on the straights.
 
 ## V. Results
-
-
 https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/05299137-f89c-4d51-a73d-8546f7eca817
 
 
