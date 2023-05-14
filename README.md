@@ -20,7 +20,10 @@ After obtaining the bird's-eye view (BEV), we need to detect the yellow lanes. T
   <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/98e0ca6e-0d7a-4bd0-90ae-6fde26ce22a0" alt="dilation" width="400" style="margin-left:50px;"/>
 </p>
 
-## Step 2: Overlaying Lines and Curves using Histograms and Optimizations
+## Step 3: Overlaying Lines and Curves using Histograms and Optimizations
+The masked image still contains noise despite prior image processing steps. This creates difficulties when applying traditional contour detection methods like Canny edge detection. Additionally, fitting straight lines to the lanes is not feasible due to the nature of F1-tenth racetracks, which contain numerous curves and turns. As a result, it is necessary to identify specific regions of interest for the left and right lanes.
+
+One approach to accomplishing this task is to split the image vertically into two halves and examine the histogram of each half in horizontal slices of 10-20 pixels. This allows us to detect areas of high pixel concentration for the left and right lanes. The pixel indices corresponding to these regions of interest can then be extracted and used as inputs for polynomial curve fitting algorithms. By estimating the curvature of the lanes using polynomial curves, we can obtain a more accurate representation of the lane boundaries and navigate the racetrack more effectively.
 
 
 
