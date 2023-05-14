@@ -7,12 +7,12 @@
 The objective is to accurately identify the left and right lanes through classical computer vision techniques. While methods like Hough Transforms are effective in detecting straight lanes, they may not suffice for the F1 tenth scenario that involves wider lanes with sharp curves and mounting height limitations. Hence, exploring alternative techniques such as Bird's Eye View (BEV) becomes imperative. BEV involves transforming the input image into a top-down view, offering a better perspective of the lane markings, road curvature and lookahead distance, and can be used for lane detection and centreline estimation
 
 ## Step 1 : Birds Eye View
-<div align="center">
-<img src= "https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/228b8736-ab66-4467-9386-7f805edc6a18"alt="ROI" width="400"/>
- <div>
  <p float="left">
-The captured image has a resolution of (480,270). To identify the region of interest (ROI) in the image, we mark a trapezoidal shape. Using perspective transformation, we can obtain a bird's-eye view of the frame. The figure below illustrates the ROI and the bird's-eye view. OpenCV provides a simple way to perform bird's eye view transformation using the warpPerspective function. The function requires two sets of points: the source points, which are the coordinates of the corners of the original image, and the destination points, which are the coordinates of where you want those corners to be in the transformed image. The code for adjusting the ROI points can be found in a function named "find_ROI".
+<img src= "https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/228b8736-ab66-4467-9386-7f805edc6a18"alt="ROI" width="400"/>
  </p>
+
+The captured image has a resolution of (480,270). To identify the region of interest (ROI) in the image, we mark a trapezoidal shape. Using perspective transformation, we can obtain a bird's-eye view of the frame. The figure below illustrates the ROI and the bird's-eye view. OpenCV provides a simple way to perform bird's eye view transformation using the warpPerspective function. The function requires two sets of points: the source points, which are the coordinates of the corners of the original image, and the destination points, which are the coordinates of where you want those corners to be in the transformed image. The code for adjusting the ROI points can be found in a function named "find_ROI".
+
   
 <p float="left">
   <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/3db8bc1b-a69d-4768-9f5d-61feb4f9aabd" alt="ROI" width="300"/>
@@ -59,9 +59,9 @@ If the number of peaks in the left lane is below a certain threshold, this indic
 Once the Centre Line has been estimated, the next step is to calculate the error between the car's heading and the estimated Centre Line. This can be achieved by selecting a reference point in the image that corresponds to the Centre of the track and calculating its deviation from the estimated Centre Line. Using the Birds eye view is here an advantage as you can easily set the reference point. The reference point can be selected by considering the dimensions of the car and the desired trajectory.
 
 The error is then calculated as the distance between the reference point and the estimated Centre Line. The direction of the error (left or right) indicates the direction in which the car should steer to stay on track. Once the error has been calculated, it can be used to determine the Steering Angle of the car.
-<div align="center">
+ </p>
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/985d3a00-670d-4d02-8c44-c8391123e5edalt" alt="half_lane" width="400"/>
-<div>
+ </p>
 
 ## IV. Calculating Steering Angle and Velocities
 The error term in the lane centering algorithm is a measure of the deviation of the estimated lane centerline from the actual center of the track in the image. The magnitude of the deviation can be quite large, ranging from -150 to 150 pixels, depending on the width of the track. In order to ensure that the error term is scaled to a range appropriate for the steering angle range of [-0.35, 0.35], the error is first normalized by dividing it by a scaling factor.
