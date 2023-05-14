@@ -54,7 +54,8 @@ If the number of peaks in the left lane is below a certain threshold, this indic
 Once the Centre Line has been estimated, the next step is to calculate the error between the car's heading and the estimated Centre Line. This can be achieved by selecting a reference point in the image that corresponds to the Centre of the track and calculating its deviation from the estimated Centre Line. Using the Birds eye view is here an advantage as you can easily set the reference point. The reference point can be selected by considering the dimensions of the car and the desired trajectory.
 
 The error is then calculated as the distance between the reference point and the estimated Centre Line. The direction of the error (left or right) indicates the direction in which the car should steer to stay on track. Once the error has been calculated, it can be used to determine the Steering Angle of the car.
+<p float="centre">
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/985d3a00-670d-4d02-8c44-c8391123e5edalt" alt="half_lane" width="400"/>
- 
+</p>
 
 
