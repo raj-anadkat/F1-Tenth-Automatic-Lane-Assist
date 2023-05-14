@@ -6,7 +6,7 @@
 - Ensure the system is robust to detect curves , operate in different lighting conditions and operate in real time.
 
 ## II. Detecting the Lanes
-The objective is to accurately identify the left and right lanes through classical computer vision techniques. While methods like Hough Transforms are effective in detecting straight lanes, they may not suffice for the F1 tenth scenario that involves wider lanes with sharp curves and mounting height limitations. Hence, exploring alternative techniques such as Bird's Eye View (BEV) becomes imperative. BEV involves transforming the input image into a top-down view, offering a better perspective of the lane markings, road curvature and lookahead distance, and can be used for lane detection and centreline estimation
+The objective is to accurately identify the left and right lanes through classical computer vision techniques. While existing methods on the internet use techniques like canny edge detection and Hough Transforms to detect straight lanes, they may not suffice for the F1 tenth scenario that involves wider lanes with sharp curves and mounting height limitations. Hence, exploring alternative techniques such as Bird's Eye View (BEV) becomes imperative. BEV involves transforming the input image into a top-down view, offering a better perspective of the lane markings, road curvature and lookahead distance, and can be used for lane detection and centreline estimation
 
 ## Step 1 : Birds Eye View
  <p float="left">
