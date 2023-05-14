@@ -53,7 +53,7 @@ If the number of peaks in the left lane is below a certain threshold, this indic
   <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/4786a55d-ce33-4fd7-a5c3-cf385070f25c" alt="approx" width="400" style="margin-left:50px;"/>
 </p>
 
-## Step 6: Calculating Error in the Trajectory
+## III. Calculating Error in the Trajectory
 Once the Centre Line has been estimated, the next step is to calculate the error between the car's heading and the estimated Centre Line. This can be achieved by selecting a reference point in the image that corresponds to the Centre of the track and calculating its deviation from the estimated Centre Line. Using the Birds eye view is here an advantage as you can easily set the reference point. The reference point can be selected by considering the dimensions of the car and the desired trajectory.
 
 The error is then calculated as the distance between the reference point and the estimated Centre Line. The direction of the error (left or right) indicates the direction in which the car should steer to stay on track. Once the error has been calculated, it can be used to determine the Steering Angle of the car.
@@ -61,7 +61,7 @@ The error is then calculated as the distance between the reference point and the
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/985d3a00-670d-4d02-8c44-c8391123e5edalt" alt="half_lane" width="400"/>
 </p>
 
-## Step 6: Calculating Steering Angle and Velocities
+## IV. Calculating Steering Angle and Velocities
 The error term in the lane centering algorithm is a measure of the deviation of the estimated lane centerline from the actual center of the track in the image. The magnitude of the deviation can be quite large, ranging from -150 to 150 pixels, depending on the width of the track. In order to ensure that the error term is scaled to a range appropriate for the steering angle range of [-0.35, 0.35], the error is first normalized by dividing it by a scaling factor.
 
 Once the normalized error value is obtained, it is used to calculate the proportional, integral, and derivative terms of the PID controller. The proportional term represents the immediate response of the system to the error and is proportional to the magnitude of the error. The integral term represents the cumulative effect of the error over time and helps to eliminate steady-state errors. The derivative term represents the rate of change of the error and helps to dampen oscillations.
