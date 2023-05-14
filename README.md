@@ -31,8 +31,7 @@ After obtaining the bird's-eye view (BEV), we need to detect the yellow lanes. T
 
 ## Step 3: Detecting Points for Lines and Curves using Histograms
 The masked image still contains noise despite prior image processing steps. This creates difficulties when applying traditional contour detection methods like Canny edge detection. Additionally, fitting straight lines to the lanes is not feasible due to the nature of F1-tenth racetracks, which contain numerous curves and turns. As a result, it is necessary to identify specific regions of interest for the left and right lanes.
- <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/a452f879-7cd3-4e70-8382-cdee80094cf9" alt="mask" width="400"/>
-
+ <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/5fdf67b2-fa84-4c3b-85ae-670154b93607" alt="mask" width="400"/>
 
 This can be done by splitting the image vertically into two halves and examine the histogram of each half in horizontal slices of 10-20 pixels. This allows us to detect areas of high pixel concentration for the left and right lanes. The pixel indices corresponding to these regions of interest can then be extracted and used as inputs for polynomial curve fitting algorithms. By estimating the curvature of the lanes using polynomial curves, we can obtain a more accurate representation of the lane boundaries and navigate the racetrack more effectively. Furthermore, the slices can be increase to have more resolution , and the histograms can be smoothened to return the top indices.
 <p float="left">
