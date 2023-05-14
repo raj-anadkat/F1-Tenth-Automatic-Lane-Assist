@@ -2,7 +2,7 @@
 
 ## I. Goals
 - Develop an autonomous driving system that uses classical computer vision techniques to detect and follow lanes
-- Taking into account camera mounting height and wide lane constraints with limmited Field of view (55 degrees)
+- Taking into account camera mounting height and wide lane constraints with limited Field of view (55 degrees)
 - Ensure the system is robust to detect curves and can operate in different lighting conditions
 - Ensure real-time operation of the system.
 
