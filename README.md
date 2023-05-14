@@ -58,4 +58,10 @@ The error is then calculated as the distance between the reference point and the
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/985d3a00-670d-4d02-8c44-c8391123e5edalt" alt="half_lane" width="400"/>
 </p>
 
+## Step 6: Calculating Steering Angle and Velocities
+The error term in the lane centering algorithm is a measure of the deviation of the estimated lane centerline from the actual center of the track in the image. The magnitude of the deviation can be quite large, ranging from -150 to 150 pixels, depending on the width of the track. In order to ensure that the error term is scaled to a range appropriate for the steering angle range of [-0.35, 0.35], the error is first normalized by dividing it by a scaling factor.
+
+Once the normalized error value is obtained, it is used to calculate the proportional, integral, and derivative terms of the PID controller. The proportional term represents the immediate response of the system to the error and is proportional to the magnitude of the error. The integral term represents the cumulative effect of the error over time and helps to eliminate steady-state errors. The derivative term represents the rate of change of the error and helps to dampen oscillations.
+
+Finally, the output of the PID controller is the steering angle that will be used to adjust the direction of the vehicle. However, this output is limited to the range of [-0.35, 0.35] to ensure that the vehicle does not overcompensate and turn too sharply.
 
