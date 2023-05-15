@@ -69,7 +69,14 @@ The direction of the error (left or right) indicates the direction in which the 
  </p>
 <img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/4ab3c2f4-1074-43e0-9033-6c46db1fa83a" alt="half_lane" width="400"/>
  </p>
-
+ 
+ ## Error Edge Case
+In some cases, the car's lane detection algorithm may only detect one lane and the reference point might lie exactly on the estimated centre line due to sharp turns or inconsistent track width. Consequently, the car would assume there is no error and assume to move forward. This can soon result in failures as in the next frame, the lane is seen as horizontal. Below are two consecutive frames that demonstrate this issue.
+  </p>
+<img src="https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/84fdc11a-4501-430e-a16d-88aa6f6b5d24" alt="half_lane" width="600"/>
+ <p>
+ To prevent this scenario, a small error value is added when the car only detects one lane until the second lane is detected. This guarantees that the car always detects two lanes even if the reference point is located on the centre line.
+ 
 ## IV. Calculating Steering Angle and Velocities
 The error term in the lane centering algorithm is a measure of the deviation of the estimated lane centerline from the actual center of the track in the image. The magnitude of the deviation can be quite large, ranging from -150 to 150 pixels, depending on the width of the track. In order to ensure that the error term is scaled to a range appropriate for the steering angle range of [-0.35, 0.35], the error is first normalized by dividing it by a scaling factor.
 
