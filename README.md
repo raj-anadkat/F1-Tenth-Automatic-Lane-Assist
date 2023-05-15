@@ -13,7 +13,7 @@ The objective is to accurately identify the left and right lanes through classic
 <img src= "https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/228b8736-ab66-4467-9386-7f805edc6a18"alt="ROI" width="400"/>
  </p>
 
-The captured image has a resolution of (480,270). To identify the region of interest (ROI) in the image, we mark a trapezoidal shape. Using perspective transformation, we can obtain a bird's-eye view of the frame. The figure below illustrates the ROI and the bird's-eye view. OpenCV provides a simple way to perform bird's eye view transformation using the warpPerspective function. The function requires two sets of points: the source points, which are the coordinates of the corners of the original image, and the destination points, which are the coordinates of where you want those corners to be in the transformed image. The code for adjusting the ROI points can be found in a function named $find_ROI.py$ .
+The captured image has a resolution of (480,270). To identify the region of interest (ROI) in the image, we mark a trapezoidal shape. Using perspective transformation, we can obtain a bird's-eye view of the frame. The figure below illustrates the ROI and the bird's-eye view. OpenCV provides a simple way to perform bird's eye view transformation using the warpPerspective function. The function requires two sets of points: the source points, which are the coordinates of the corners of the original image, and the destination points, which are the coordinates of where you want those corners to be in the transformed image. The code for adjusting the ROI points can be found in a function named $$find_ROI.py$$ .
 
   
 <p float="left">
