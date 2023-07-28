@@ -6,9 +6,9 @@ mid_velocity = 1
 min_velocity = 0.5
 
 # PID control constants
-KP = 0.5
-KI = 0.0
-KD = 0.1
+KP = 0.43
+KI = 0.01
+KD = 0.11
 
 # PID control variables
 last_error = 0.0
