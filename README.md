@@ -104,5 +104,9 @@ https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/05299137
 
 https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/9dcbd728-9961-43f4-b9d2-f902b14ae38a
 
+References:
+https://automaticaddison.com/the-ultimate-guide-to-real-time-lane-detection-using-opencv/
+
+
 
 
