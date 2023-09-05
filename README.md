@@ -100,12 +100,10 @@ The Birds Eye View image can be Re-Projected Back to the camera frame and other 
 </p>
 
 ## VI. Demo
+https://github.com/raj-anadkat/F1-Tenth-Automatic-Lane-Assist/assets/109377585/86c09e98-a474-4e17-9c5f-f4140d5052a6
+
 https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/05299137-f89c-4d51-a73d-8546f7eca817
 
-https://github.com/raj-anadkat/F1_tenth_Lane_Detection/assets/109377585/9dcbd728-9961-43f4-b9d2-f902b14ae38a
-
-References:
-https://automaticaddison.com/the-ultimate-guide-to-real-time-lane-detection-using-opencv/
 
 
 
